@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GoogleMaps
 
 
 
@@ -47,16 +48,18 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
         centerMapOnLocation(initialLocation)
         checkLocationAuthorizationStatus()
         
-        let addSpot = UILongPressGestureRecognizer(target: self, action: "action:")
         
-        addSpot.minimumPressDuration = 2
-        
-        mapView.addGestureRecognizer(addSpot)
         
     }
     /*
     Beginning to try to allow them to add a new place through touch
     
+    
+    let addSpot = UILongPressGestureRecognizer(target: self, action: "action:")
+    
+    addSpot.minimumPressDuration = 2
+    
+    mapView.addGestureRecognizer(addSpot)
     func action(gestureRecognizer:UIGestureRecognizer) {
         
         var touchPoint = gestureRecognizer.locationInView(self.mapView)
@@ -111,6 +114,25 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
             self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
     }
+    /* Adding the Google autocomplete
+
+    func placeAutocomplete() {
+        let filter = GMSAutocompleteFilter()
+        filter.type = GMSPlacesAutocompleteTypeFilter.City
+        placesClient?.autocompleteQuery("Sydney Oper", bounds: nil, filter: filter, callback: { (results, error: NSError?) -> Void in
+            if let error = error {
+                print("Autocomplete error \(error)")
+            }
+            
+            for result in results! {
+                if let result = result as? GMSAutocompletePrediction {
+                    print("Result \(result.attributedFullText) with placeID \(result.placeID)")
+                }
+            }
+        })
+    }
+
+*/
 
     //trying to customize the pin
     /*

@@ -13,7 +13,9 @@ import GoogleMaps
 
 
 
-class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
+
+class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
+
 
     
     @IBOutlet weak var mapView: MKMapView!
@@ -22,15 +24,15 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     
     //starts map overlooking Pyrenees
     let initialLocation = CLLocation(latitude: 42.988566, longitude: 0.460573)
-    
-    var searchController:UISearchController!
     var annotation:MKAnnotation!
+    var searchController:UISearchController!
     var localSearchRequest:MKLocalSearchRequest!
     var localSearch:MKLocalSearch!
     var localSearchResponse:MKLocalSearchResponse!
     var error:NSError!
     var pointAnnotation:MKPointAnnotation!
     var pinAnnotationView:MKPinAnnotationView!
+    
     
     // MARK: - location manager to authorize user location for Maps app
     
@@ -48,31 +50,34 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
         centerMapOnLocation(initialLocation)
         checkLocationAuthorizationStatus()
         
-        
+        let addSpot = UILongPressGestureRecognizer(target: self, action: "action:")
+        addSpot.minimumPressDuration = 1
+        mapView.addGestureRecognizer(addSpot)
         
     }
-    /*
-    Beginning to try to allow them to add a new place through touch
+   
+    //longpress to add new location - works, need to change icon and get the addition of the nex place to open up text fields...
     
-    
-    let addSpot = UILongPressGestureRecognizer(target: self, action: "action:")
-    
-    addSpot.minimumPressDuration = 2
-    
-    mapView.addGestureRecognizer(addSpot)
     func action(gestureRecognizer:UIGestureRecognizer) {
         
-        var touchPoint = gestureRecognizer.locationInView(self.mapView)
-        
-        var newCoordinate = CLLocationCoordinate2D = mapView.convertPoint(touchPoint, fromView: self.mapView)
+        let touchPoint = gestureRecognizer.locationInView(self.mapView)
+        let newCoordinate: CLLocationCoordinate2D = mapView.convertPoint(touchPoint, toCoordinateFromView: self.mapView)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = newCoordinate
+        self.mapView.addAnnotation(annotation)
         
     }
-*/
+    
+
+
+    
     let regionRadius: CLLocationDistance = 200000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+        mapView.showsCompass = true
+        mapView.showsScale = true
     }
     
 
@@ -106,6 +111,8 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
            
             self.pointAnnotation = MKPointAnnotation()
             self.pointAnnotation.title = searchBar.text
+            
+                
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
             
             
@@ -114,8 +121,16 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
             self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
     }
-    /* Adding the Google autocomplete
+    
+    
+    
+    
+    
+}
 
+    
+ 
+/* Google autocomplete
     func placeAutocomplete() {
         let filter = GMSAutocompleteFilter()
         filter.type = GMSPlacesAutocompleteTypeFilter.City
@@ -134,30 +149,8 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
 
 */
 
-    //trying to customize the pin
-    /*
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        if !(annotation is MKPointAnnotation) {
-            return nil
-        }
-        
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("demo")
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "demo")
-            annotationView!.canShowCallout = true
-        }
-        else {
-            annotationView!.annotation = annotation
-        }
-        
-        annotationView!.image = UIImage(named: "pin_for_map3")
-        
-        return annotationView
-        
-    }
-*/
-}
+
+
 
 
 

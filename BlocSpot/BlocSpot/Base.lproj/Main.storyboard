@@ -3,9 +3,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pyrenees Rando-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlocSpot" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,32 +16,44 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aB-6B-JCr">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="40" y="0.0" width="520" height="506"/>
                                 <animations/>
                             </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1aB-6B-JCr" secondAttribute="trailing" id="9Ga-9Z-Gap"/>
-                            <constraint firstItem="1aB-6B-JCr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bb5-uA-Wbt"/>
-                            <constraint firstItem="1aB-6B-JCr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ihN-Td-R1y"/>
-                            <constraint firstItem="1aB-6B-JCr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oUD-2i-Cu8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1aB-6B-JCr" secondAttribute="bottom" id="uCr-EF-BRu"/>
+                            <constraint firstItem="1aB-6B-JCr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Y0D-jM-bXI"/>
+                            <constraint firstItem="1aB-6B-JCr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zdh-2u-5ZD"/>
+                            <constraint firstItem="1aB-6B-JCr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qc3-ia-6WU"/>
+                            <constraint firstItem="1aB-6B-JCr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="zJg-Kj-fnc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cTC-jp-aNo">
-                        <barButtonItem key="rightBarButtonItem" image="search1xa" id="XjV-yG-QrY">
+                    <navigationItem key="navigationItem" title="Pyrenees Rando" id="cTC-jp-aNo">
+                        <barButtonItem key="leftBarButtonItem" image="list1x" id="Kf5-dq-All">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="searchButton:" destination="BYZ-38-t0r" id="O9e-8R-6Rz"/>
-                            </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="search1xa" id="XjV-yG-QrY">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" id="O9e-8R-6Rz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="filter1x" id="kP6-pn-Nlr">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="arL-ZF-3Ju" kind="show" id="SbB-xe-hhl"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="mapView" destination="1aB-6B-JCr" id="Om8-Uy-qNz"/>
                         <outlet property="searchDisplayController" destination="hhT-mq-fBC" id="RFt-t2-gHn"/>
@@ -55,7 +69,53 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1117" y="354"/>
+            <point key="canvasLocation" x="1109" y="358"/>
+        </scene>
+        <!--Places View Controller-->
+        <scene sceneID="ImY-v5-b5s">
+            <objects>
+                <tableViewController id="arL-ZF-3Ju" customClass="PlacesViewController" customModule="BlocSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qk2-la-bEr">
+                        <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPlaces" id="06b-i8-2Bx">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="06b-i8-2Bx" id="dRn-Hp-XOv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pin_for_map3" translatesAutoresizingMaskIntoConstraints="NO" id="5nd-HH-94l">
+                                            <rect key="frame" x="31" y="0.0" width="49" height="43"/>
+                                            <animations/>
+                                        </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="placename" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYQ-KM-ZIE">
+                                            <rect key="frame" x="186" y="8" width="97" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="arL-ZF-3Ju" id="cOv-ZM-gTL"/>
+                            <outlet property="delegate" destination="arL-ZF-3Ju" id="xN6-uL-EX1"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="Qk2-la-bEr" id="Kqs-7X-fuW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4a-7R-R90" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="1080"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eBK-0Z-a4i">
@@ -70,14 +130,21 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6dp-5P-Ira"/>
+                        <segue destination="arL-ZF-3Ju" kind="presentation" id="qfO-cd-FQp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6h-Lp-JCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="1014"/>
+            <point key="canvasLocation" x="391" y="826"/>
         </scene>
     </scenes>
     <resources>
+        <image name="filter1x" width="14" height="14"/>
+        <image name="list1x" width="19" height="14"/>
+        <image name="pin_for_map3" width="13" height="22"/>
         <image name="search1xa" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SbB-xe-hhl"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,7 @@
 		93272F6E1C04A33100CA43C4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93272F6D1C04A33100CA43C4 /* CoreLocation.framework */; };
 		93272F701C04A33900CA43C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93272F6F1C04A33900CA43C4 /* CoreData.framework */; };
 		93272F721C04A8DE00CA43C4 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93272F711C04A8DE00CA43C4 /* PlacesViewController.swift */; };
+		9367D8671C07125000099437 /* calloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367D8661C07125000099437 /* calloutView.swift */; };
 		95E959D23CF5476C09932F36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C91CC87BC1AC57D0421F64E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		93272F6D1C04A33100CA43C4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		93272F6F1C04A33900CA43C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		93272F711C04A8DE00CA43C4 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		9367D8661C07125000099437 /* calloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calloutView.swift; sourceTree = "<group>"; };
 		AD6E1A45BB43319A6F321593 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F5886676D107534B6A4C7C0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 			children = (
 				930613181C046BB90065F12C /* AppDelegate.swift */,
 				9306131A1C046BB90065F12C /* ViewController.swift */,
+				9367D8661C07125000099437 /* calloutView.swift */,
 				93272F711C04A8DE00CA43C4 /* PlacesViewController.swift */,
 				9306131C1C046BB90065F12C /* Main.storyboard */,
 				930613221C046BB90065F12C /* Assets.xcassets */,
@@ -360,6 +363,7 @@
 			files = (
 				93272F721C04A8DE00CA43C4 /* PlacesViewController.swift in Sources */,
 				930613211C046BB90065F12C /* BlocSpot.xcdatamodeld in Sources */,
+				9367D8671C07125000099437 /* calloutView.swift in Sources */,
 				9306131B1C046BB90065F12C /* ViewController.swift in Sources */,
 				930613191C046BB90065F12C /* AppDelegate.swift in Sources */,
 			);

@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
+import GoogleMaps
+import CoreData
 
 class PlacesViewController: UITableViewController {
 
+    @IBOutlet var myPlacesView: UITableView!
+    
+    
+    var newPlace = [NSManagedObject]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +40,7 @@ class PlacesViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
         return 0
     }
 

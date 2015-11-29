@@ -19,7 +19,12 @@
 		93272F6E1C04A33100CA43C4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93272F6D1C04A33100CA43C4 /* CoreLocation.framework */; };
 		93272F701C04A33900CA43C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93272F6F1C04A33900CA43C4 /* CoreData.framework */; };
 		93272F721C04A8DE00CA43C4 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93272F711C04A8DE00CA43C4 /* PlacesViewController.swift */; };
+		933317D31C089AD6005BA0A9 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933317D21C089AD6005BA0A9 /* Places.swift */; };
+		933317D81C08AB24005BA0A9 /* Place+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 933317D51C08AB24005BA0A9 /* Place+CoreDataProperties.m */; };
+		933317D91C08AB24005BA0A9 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 933317D71C08AB24005BA0A9 /* Place.m */; };
 		9367D8671C07125000099437 /* calloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367D8661C07125000099437 /* calloutView.swift */; };
+		9367D86D1C0749CA00099437 /* EnterPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367D86C1C0749CA00099437 /* EnterPlaces.swift */; };
+		9373F9321C0B5AA000E02AF5 /* Gentau_Pic_du_Midi_Ossau.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9373F9311C0B5AA000E02AF5 /* Gentau_Pic_du_Midi_Ossau.jpg */; };
 		95E959D23CF5476C09932F36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C91CC87BC1AC57D0421F64E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +65,14 @@
 		93272F6D1C04A33100CA43C4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		93272F6F1C04A33900CA43C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		93272F711C04A8DE00CA43C4 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		933317D21C089AD6005BA0A9 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = SOURCE_ROOT; };
+		933317D41C08AB24005BA0A9 /* Place+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataProperties.h"; sourceTree = "<group>"; };
+		933317D51C08AB24005BA0A9 /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataProperties.m"; sourceTree = "<group>"; };
+		933317D61C08AB24005BA0A9 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		933317D71C08AB24005BA0A9 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		9367D8661C07125000099437 /* calloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calloutView.swift; sourceTree = "<group>"; };
+		9367D86C1C0749CA00099437 /* EnterPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPlaces.swift; sourceTree = "<group>"; };
+		9373F9311C0B5AA000E02AF5 /* Gentau_Pic_du_Midi_Ossau.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gentau_Pic_du_Midi_Ossau.jpg; sourceTree = "<group>"; };
 		AD6E1A45BB43319A6F321593 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F5886676D107534B6A4C7C0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,11 +146,18 @@
 				9306131A1C046BB90065F12C /* ViewController.swift */,
 				9367D8661C07125000099437 /* calloutView.swift */,
 				93272F711C04A8DE00CA43C4 /* PlacesViewController.swift */,
+				9367D86C1C0749CA00099437 /* EnterPlaces.swift */,
+				933317D21C089AD6005BA0A9 /* Places.swift */,
 				9306131C1C046BB90065F12C /* Main.storyboard */,
+				9373F9311C0B5AA000E02AF5 /* Gentau_Pic_du_Midi_Ossau.jpg */,
 				930613221C046BB90065F12C /* Assets.xcassets */,
 				930613241C046BB90065F12C /* LaunchScreen.storyboard */,
 				930613271C046BB90065F12C /* Info.plist */,
 				9306131F1C046BB90065F12C /* BlocSpot.xcdatamodeld */,
+				933317D41C08AB24005BA0A9 /* Place+CoreDataProperties.h */,
+				933317D51C08AB24005BA0A9 /* Place+CoreDataProperties.m */,
+				933317D61C08AB24005BA0A9 /* Place.h */,
+				933317D71C08AB24005BA0A9 /* Place.m */,
 			);
 			path = BlocSpot;
 			sourceTree = "<group>";
@@ -288,6 +307,7 @@
 			files = (
 				930613261C046BB90065F12C /* LaunchScreen.storyboard in Resources */,
 				930613231C046BB90065F12C /* Assets.xcassets in Resources */,
+				9373F9321C0B5AA000E02AF5 /* Gentau_Pic_du_Midi_Ossau.jpg in Resources */,
 				9306131E1C046BB90065F12C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,9 +381,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9367D86D1C0749CA00099437 /* EnterPlaces.swift in Sources */,
 				93272F721C04A8DE00CA43C4 /* PlacesViewController.swift in Sources */,
 				930613211C046BB90065F12C /* BlocSpot.xcdatamodeld in Sources */,
+				933317D31C089AD6005BA0A9 /* Places.swift in Sources */,
 				9367D8671C07125000099437 /* calloutView.swift in Sources */,
+				933317D81C08AB24005BA0A9 /* Place+CoreDataProperties.m in Sources */,
+				933317D91C08AB24005BA0A9 /* Place.m in Sources */,
 				9306131B1C046BB90065F12C /* ViewController.swift in Sources */,
 				930613191C046BB90065F12C /* AppDelegate.swift in Sources */,
 			);
@@ -508,6 +532,7 @@
 			baseConfigurationReference = F5886676D107534B6A4C7C0E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlocSpot/Info.plist;
@@ -515,6 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eric-ehamberlin.BlocSpot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -523,6 +549,7 @@
 			baseConfigurationReference = AD6E1A45BB43319A6F321593 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlocSpot/Info.plist;
